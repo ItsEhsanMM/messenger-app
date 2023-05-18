@@ -10,7 +10,7 @@ const Navbar = ({ logout }) => {
             <h1>messenger</h1>
          </div>
          <div className={styles.btContainer}>
-            <button onClick={() => logout}>LogOut</button>
+            <button onClick={logout}>LogOut</button>
          </div>
       </div>
    );

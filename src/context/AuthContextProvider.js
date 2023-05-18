@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { auth } from "../firebase";
+import { auth } from "../services/firebase";
 import { useNavigate } from "react-router-dom";
 
-const authContext = React.createContext();
+export const authContext = React.createContext();
 
 const AuthContextProvider = ({ children }) => {
    const [loading, setLoading] = useState(true);
@@ -12,8 +12,9 @@ const AuthContextProvider = ({ children }) => {
    useEffect(() => {
       auth.onAuthStateChanged((user) => {
          setUser(user);
+         console.log(user);
          setLoading(false);
-         if (user) navigate("/chat");
+         if (user) navigate("/chats");
       });
    }, [user, navigate]);
 

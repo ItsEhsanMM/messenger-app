@@ -1,5 +1,4 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
 import firebase from "firebase/compat/app";
 import { auth } from "../services/firebase";
 

@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 // Components
 import Login from "./components/Login";
-import AuthContextProvider from "./services/context/AuthContextProvider";
+import AuthContextProvider from "./context/AuthContextProvider";
 import Chat from "./components/Chat";
 
 const App = () => {
@@ -11,9 +11,9 @@ const App = () => {
       <div>
          <AuthContextProvider>
             <Routes>
-               <Route path="/" element={<Login />} />
                <Route path="/chats" element={<Chat />} />
-               <Route path="/*" element={<Navigate to="/" />} />
+               <Route path="/login" element={<Login />} />
+               <Route path="/*" element={<Navigate to="/login" />} />
             </Routes>
          </AuthContextProvider>
       </div>

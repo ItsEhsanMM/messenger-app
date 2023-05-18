@@ -13,8 +13,6 @@ import { authContext } from "../context/AuthContextProvider";
 // Styles
 import styles from "./Chat.module.scss";
 
-document.title = "messenger";
-
 const Chat = () => {
    const navigate = useNavigate();
    const [loading, setLoading] = useState(true);
@@ -68,12 +66,16 @@ const Chat = () => {
       navigate("/login");
    };
 
-   if (!user || loading)
+   if (!user || loading) {
+      document.title = "loading";
       return (
          <div className={styles.container}>
             <div className={styles.spinner}></div>
          </div>
       );
+   }
+
+   document.title = "messenger";
 
    return (
       <div>

@@ -1,8 +1,8 @@
 # messenger app
     this application made by react , firebase , axios , react-router-dom
-     and react-chat-engine.
+     , react-chat-engine and styled with sass(scss).
 
-### style
+### responsive
     the messenger has completly responsived for mobile and etc...
 
 ### introduction

@@ -10,6 +10,9 @@ import Navbar from "./Navbar";
 // Context
 import { authContext } from "../context/AuthContextProvider";
 
+// Styles
+import styles from "./Chat.module.scss";
+
 document.title = "messenger";
 
 const Chat = () => {
@@ -39,14 +42,15 @@ const Chat = () => {
             formData.append("secret", user.uid);
 
             getImg(user.photoURL).then((avatar) => {
-               
                formData.append("avatar", avatar, avatar.name);
+
                axios
                   .post("https://api.chatengine.io/users", formData, {
                      headers: {
                         "private-key": "003cf559-f9bc-4b08-bad1-673d96e752dd",
                      },
                   })
+
                   .then(() => setLoading(false))
                   .catch((error) => console.log(error));
             });
@@ -64,7 +68,12 @@ const Chat = () => {
       navigate("/login");
    };
 
-   if (!user || loading) return <div></div>;
+   if (!user || loading)
+      return (
+         <div className={styles.container}>
+            <div className={styles.spinner}></div>
+         </div>
+      );
 
    return (
       <div>

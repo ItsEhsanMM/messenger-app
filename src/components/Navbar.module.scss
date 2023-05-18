@@ -1,0 +1,44 @@
+* {
+   // outline: 1px red solid;
+}
+
+.container {
+   display: flex;
+   width: calc(100% - 16rem);
+   height: 80px;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 8rem;
+   background-color: #f0f0f0;
+   box-shadow: 0 2px 7px rgba($color: #000000, $alpha: 0.6);
+
+   .h1Container {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #34495e;
+   }
+
+   .btContainer {
+      height: inherit;
+      width: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      button {
+         width: inherit;
+         height: 3rem;
+         font-size: 1.2rem;
+         border-radius: 30px;
+         background-color: #e74c3c;
+         color: white;
+         border: none;
+         cursor: pointer;
+         transition: all 0.2s ease-in;
+
+         &:hover {
+            background-color: #c0392b;
+         }
+      }
+   }
+}
